@@ -1,0 +1,24 @@
+{
+  "name": "youtubeplaylistmanager",
+  "version": "0.0.1",
+  "description": "youtubeplaylistmanager",
+  "main": "server.js",
+  "dependencies": {
+    "express": "2.5.5",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dazs1on/youtubeplaylistmanager.git"
+  },
+  "author": "dazs1on",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/dazs1on/youtubeplaylistmanager/issues"
+  },
+  "homepage": "https://github.com/dazs1on/youtubeplaylistmanager"
+}

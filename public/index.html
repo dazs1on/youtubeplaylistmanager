@@ -1,0 +1,38 @@
+<html ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.2.23/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="script.js"></script> 
+<style type="text/css">
+/* placeholder inline styles */
+ 
+body { font-family: arial, verdana; }
+ 
+a,
+a img { text-decoration: none; }
+ 
+ul.youtubeFeed {
+margin: 0;
+padding: 0;
+}
+ 
+ul.youtubeFeed li {
+float: left;
+width: 150px;
+list-style-type: none;
+font-size: 11px;
+height: 170px;
+}
+ 
+ul.youtubeFeed li div { width: 118px; }
+</style>
+</head>
+<body>
+<div>
+ <div ng-view=""></div>
+ </div>
+</body>
+</html>

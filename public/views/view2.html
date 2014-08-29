@@ -1,0 +1,45 @@
+ <h1>You are logged in as some guy</h1>
+<br />
+
+<div id="videos">
+ 
+<div id="videocomm">
+ 
+<h3>Please Wait....</h3>
+ 
+<div id="youtubeVideo">
+ 
+Insert video here
+ 
+</div>
+ 
+<p>Click a thumbnail below to watch the video.</p>
+ 
+<div class="slider">
+ 
+<div id="fragment-1">
+ 
+<ul class="youtubeFeed">
+ 
+</ul>
+ 
+</div>
+ 
+</div>
+ 
+</div>
+ 
+</div>
+
+<div class="container" ng-controller="PlaylistController">
+<ul>
+	<li ng-repeat="list in currentplaylist ">
+				{{ list.video }}
+	</li>
+</ul>
+<br />
+Add a new video: <br />
+<input type="text" ng-model="currentplaylist.newVideo" />
+<button ng-click="addVideo()">Add Video</button>
+</div>
+ <a href="#/view1">Logout</a>
