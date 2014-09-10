@@ -4,7 +4,7 @@
   "description": "youtubeplaylistmanager",
   "main": "server.js",
   "dependencies": {
-    "express": "2.5.5",
+    "express": "^4.0",
   },
   "devDependencies": {},
   "scripts": {
