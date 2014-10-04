@@ -1,9 +1,11 @@
 var express = require('express'),
 	app = express(),
-	http = require('http'),
 	path = require('path'),
 	mongoose = require('mongoose'),
-	hash = require('./pass').hash;
+	hash = require('./pass').hash,
+	session = require('express-session'),
+	bodyParser = require('body-parser'),
+	cookieParser = require('cookie-parser');
 
 mongoose.connect('mongodb://localhost/myapp');
 
@@ -21,14 +23,12 @@ var UserSchema = new mongoose.Schema({
 
 var User = mongoose.model('users', UserSchema);
 
-app.configure(function () {
-	app.use(express.cookieParser());
-    app.use(express.session({ secret: 'ytapp' }));
-    app.use(express.bodyParser());
-	app.use(express.static(path.join(__dirname, 'public')));
-    app.set('views', __dirname + '/public');
-    app.set('view engine', 'jade');
-});
+app.use(cookieParser());
+app.use(session({ secret: 'ytapp' }));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, '/public'));
+app.set('view engine', 'jade');
 
 
 function authenticate(name, pass, fn) {
@@ -74,5 +74,8 @@ function userExist(req, res, next) {
     });
 }
 
-http.createServer(app).listen(process.env.PORT || 8080);
-console.log('Server Started Successfully...');
+app.set('port', process.env.PORT || 8080);
+
+app.listen(app.get('port'), function() {
+	console.log('Server Started Successfully on port ' + app.get('port'));
+});
